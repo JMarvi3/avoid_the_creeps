@@ -47,4 +47,6 @@ func _on_mob_timer_timeout():
 	add_child(mob)
 	
 func _ready():
+	if not OS.has_feature("web_android") and not OS.has_feature("web_ios"):
+		$UI.visible = false
 	new_game()
