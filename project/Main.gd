@@ -47,7 +47,6 @@ func _on_mob_timer_timeout():
 	add_child(mob)
 	
 func _ready():
-	JavaScriptBridge.eval("log(window.navigator.userAgent)")
 	if not OS.has_feature("web") or not JavaScriptBridge.eval("window.navigator.userAgent.includes('Android') || window.navigator.userAgent.includes('iPhone')"):
 		$UI.visible = false
 	
