@@ -47,6 +47,6 @@ func _on_mob_timer_timeout():
 	add_child(mob)
 	
 func _ready():
-	if not OS.has_feature("web_android") and not OS.has_feature("web_ios"):
+	if not OS.has_feature("web") or JavaScriptBridge.eval("window.navigator.userAgent.includes('Android') || window.navigator.userAgent.includes('iPhone')"):
 		$UI.visible = false
 	new_game()
